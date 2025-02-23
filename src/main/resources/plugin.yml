@@ -1,0 +1,8 @@
+name: ElysiaRecycle
+version: '${project.version}'
+main: com.elysia.elysiarecycle.ElysiaRecycle
+commands:
+  ElysiaRecycle:
+    permission: admin
+    aliases:
+      - er

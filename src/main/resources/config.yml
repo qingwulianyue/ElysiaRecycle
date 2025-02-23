@@ -1,0 +1,12 @@
+#debug开关
+debug: false
+#消息提示前缀
+prefix: "§6[回收系统]"
+#匹配的关键词
+match: "价值"
+#回收页面的提示信息
+tips:
+  confirm: "§a点击确认回收，总计金额 %count%"
+#消息提示内容
+messages:
+  recycle: "§a回收了 %number% 件物品，获得了 %count% 金币"
