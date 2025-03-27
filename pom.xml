@@ -67,5 +67,12 @@
           <version>1.12.2-R0.1-SNAPSHOT</version>
           <scope>provided</scope>
       </dependency>
+      <dependency>
+          <groupId>libs.Vault-1.7.3</groupId>
+          <artifactId>Vault</artifactId>
+          <version>1.7.3</version>
+          <scope>system</scope>
+          <systemPath>${project.basedir}/libs/Vault-1.7.3.jar</systemPath>
+      </dependency>
   </dependencies>
 </project>

@@ -9,6 +9,7 @@ import com.elysia.elysiarecycle.filemanager.ConfigManager;
 import com.elysia.elysiarecycle.filemanager.PlayerManager;
 import com.elysia.elysiarecycle.guimanager.GuiManager;
 import com.elysia.elysiarecycle.listener.ElysiaRecycleListener;
+import net.milkbowl.vault.economy.Economy;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -17,6 +18,7 @@ public final class ElysiaRecycle extends JavaPlugin {
     private static ConfigManager configManager;
     private static PlayerManager playerManager;
     private static GuiManager guiManager;
+    private static Economy economy;
     public static ElysiaRecycle getInstance() {
         return instance;
     }
@@ -28,6 +30,9 @@ public final class ElysiaRecycle extends JavaPlugin {
     }
     public static GuiManager getGuiManager() {
         return guiManager;
+    }
+    public static Economy getEconomy() {
+        return economy;
     }
     @Override
     public void onEnable() {
@@ -41,6 +46,7 @@ public final class ElysiaRecycle extends JavaPlugin {
         Bukkit.getPluginCommand("ElysiaRecycle").setExecutor(new CommandManager());
         Bukkit.getPluginCommand("ElysiaRecycle").setTabCompleter(new CommandTabComplete());
         Bukkit.getPluginManager().registerEvents(new ElysiaRecycleListener(), this);
+        economy = getServer().getServicesManager().getRegistration(Economy.class).getProvider();
         new HelpCommand().register();
         new ReloadCommand().register();
         new OpenCommand().register();
